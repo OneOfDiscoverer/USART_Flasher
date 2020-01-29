@@ -1,0 +1,14 @@
+D:\Application\USART_Terminal\USART_Terminal\bin\Debug\USART_Terminal.exe.config
+D:\Application\USART_Terminal\USART_Terminal\bin\Debug\USART_Terminal.exe
+D:\Application\USART_Terminal\USART_Terminal\bin\Debug\USART_Terminal.pdb
+D:\Application\USART_Terminal\USART_Terminal\obj\Debug\USART_Terminal.csprojAssemblyReference.cache
+D:\Application\USART_Terminal\USART_Terminal\obj\Debug\USART_Terminal.csproj.CoreCompileInputs.cache
+D:\Application\USART_Terminal\USART_Terminal\obj\Debug\USART_Terminal.exe
+D:\Application\USART_Terminal\USART_Terminal\obj\Debug\USART_Terminal.pdb
+D:\Projects\git\Application\USART_Terminal\USART_Terminal\bin\Debug\USART_Terminal.exe.config
+D:\Projects\git\Application\USART_Terminal\USART_Terminal\bin\Debug\USART_Terminal.exe
+D:\Projects\git\Application\USART_Terminal\USART_Terminal\bin\Debug\USART_Terminal.pdb
+D:\Projects\git\Application\USART_Terminal\USART_Terminal\obj\Debug\USART_Terminal.csprojAssemblyReference.cache
+D:\Projects\git\Application\USART_Terminal\USART_Terminal\obj\Debug\USART_Terminal.csproj.CoreCompileInputs.cache
+D:\Projects\git\Application\USART_Terminal\USART_Terminal\obj\Debug\USART_Terminal.exe
+D:\Projects\git\Application\USART_Terminal\USART_Terminal\obj\Debug\USART_Terminal.pdb
