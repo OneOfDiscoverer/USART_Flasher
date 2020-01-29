@@ -41,7 +41,7 @@ namespace USART_Terminal
             FindPorts = SerialPort.GetPortNames();
             foreach (string s in FindPorts) Console.WriteLine(s);
             Console.WriteLine("Enter port name:");
-            port.PortName = "COM6";// Console.ReadLine();
+            port.PortName = Console.ReadLine();
             //Console.WriteLine(port.PortName + " selected, enter baudrate:");
             //port.BaudRate = int.Parse(Console.ReadLine());
             port.BaudRate = 2000000;
@@ -68,12 +68,15 @@ namespace USART_Terminal
                             Console.Clear();
                             break;
                         case 'f':
+                            Console.WriteLine("starting flash");
                             state = State.entering_boot;
                             break;
                         case 'r':
+                            Console.WriteLine("restarting device");
                             port.Write(BitConverter.GetBytes(0xDE), 0, 1);
                             break;
                         case 'j':
+                            Console.WriteLine("jump to main app");
                             port.Write(BitConverter.GetBytes(0x01), 0, 1);
                             break;
                     }
