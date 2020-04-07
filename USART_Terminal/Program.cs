@@ -48,7 +48,7 @@ namespace USART_Terminal
             Console.WriteLine(port.BaudRate + " selected");
             port.Open();
             Console.WriteLine(port.PortName + " opened");
-            log_name = DateTime.Now.ToString();
+            log_name = DateTime.Now.ToString("u");
             log_name = log_name.Replace(".", "");
             log_name = log_name.Replace(":", "");
             log_name = log_name.Replace(" ", "_");
