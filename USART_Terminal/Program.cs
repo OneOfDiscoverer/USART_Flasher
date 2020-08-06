@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.IO.Ports;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Timers;
 
@@ -86,11 +88,38 @@ namespace USART_Terminal
         {
             while (true)
             {
-                receive = port.ReadLine();
-                string outp = DateTime.Now.ToLongTimeString()+ ":" + DateTime.Now.Millisecond.ToString() + ";" + receive + "\n";
+                byte[] res = new byte[20];
+                int[] fin = new int[20];
+                int len = 0;
+                string reci = null;
+                while (true)
+                {
+                    port.Read(res, len, 1);
+                    if (len > 1 && res[len - 1] == 0xDE && res[len] == 0xAD) break;
+                    len++;
+                }
+                len -= 1;
+                for (int q = 0; q < len; q += 2)
+                {
+                    //fin[q/2] = res[q] << 8 | res[q+1];
+                    reci += (res[q] << 8 | res[q + 1]).ToString("d") + "; ";
+                }
+                //foreach (int b in fin)
+                //{
+                   
+                //}
+                string outp = DateTime.Now.ToLongTimeString() + ":" + DateTime.Now.Millisecond.ToString() + " " + reci + "\n";
                 byte[] bt = System.Text.Encoding.UTF8.GetBytes(outp);
                 Console.Write(outp);
                 if (log_name != null) fs.Write(bt, 0, bt.Length);
+                //else
+                //{
+                //    receive = port.ReadLine();
+                //    string outp = DateTime.Now.ToLongTimeString() + ":" + DateTime.Now.Millisecond.ToString() + ";" + receive + "\n";
+                //    byte[] bt = System.Text.Encoding.UTF8.GetBytes(outp);
+                //    Console.Write(outp);
+                //    if (log_name != null) fs.Write(bt, 0, bt.Length);
+                //}
             }
         }
         static public void TimerElapsedEventHandler(object sender, EventArgs args) //проверить таймаут
